@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестування таблиці істинності логічного елемента "І"</title>
+    <style>
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+        .button:hover {background-color: #3e8e41}
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Тестування знання таблиці істинності логічного елемента "І"</h1>
+    <p>Натисніть на кнопку для перевірки результату операції "І" для значень A і B.</p>
+    <div>
+        <label for="inputA">A: </label>
+        <select id="inputA">
+            <option value="1">1 (Істина)</option>
+            <option value="0">0 (Хиба)</option>
+        </select>
+    </div>
+    <div>
+        <label for="inputB">B: </label>
+        <select id="inputB">
+            <option value="1">1 (Істина)</option>
+            <option value="0">0 (Хиба)</option>
+        </select>
+    </div>
+    <button class="button" id="testButton">Перевірити</button>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('testButton').onclick = function() {
+            var inputA = parseInt(document.getElementById('inputA').value);
+            var inputB = parseInt(document.getElementById('inputB').value);
+            var result = inputA && inputB;
+            
+            var resultText = "Результат: " + (result ? "1 (Істина)" : "0 (Хиба)");
+            document.getElementById('result').innerText = resultText;
+        };
+    </script>
+</body>
+</html>
